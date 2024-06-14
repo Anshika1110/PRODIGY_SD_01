@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #1F1C2C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #E7E7EB;
+    overflow: hidden;
+}
+
+.container {
+    background: #2D3047;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #E7E7EB;
+    font-size: 24px;
+    border-bottom: 2px solid #3D4163;
+    padding-bottom: 10px;
+}
+
+.converter {
+    margin-bottom: 20px;
+}
+
+input, select {
+    padding: 12px 15px;
+    margin: 10px 0;
+    width: calc(100% - 24px);
+    border: 1px solid #3D4163;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #E7E7EB;
+    background-color: #2D3047;
+    outline: none;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input:focus, select:focus {
+    border-color: #4A90E2;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px; /* Add margin between buttons */
+}
+
+button {
+    background-color: #4A90E2;
+    color: white;
+    cursor: pointer;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 48%;
+}
+
+button:hover {
+    background-color: #357EC7;
+    transform: scale(1.05);
+}
+
+#output {
+    display: none; /* Initially hidden */
+}
+
+#output.visible {
+    display: block; /* Display when .visible class is added */
+}
+
+#output p {
+    margin: 12px 0;
+    font-size: 18px;
+    color: #E7E7EB;
+    padding: 8px;
+    border-radius: 6px;
+    background: #3D4163;
+    border: 1px solid #4A90E2;
+    transition: background-color 0.3s;
+}
+
+#output p:hover {
+    background-color: #2D3047;
+}
+
+/* Additional decorative elements */
+.container::before, .container::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float 6s ease-in-out infinite;
+}
+
+.container::before {
+    width: 400px;
+    height: 400px;
+    background: rgba(74, 144, 226, 0.1);
+    top: -200px;
+    left: -150px;
+    animation-delay: 0s;
+}
+
+.container::after {
+    width: 300px;
+    height: 300px;
+    background: rgba(61, 65, 99, 0.1);
+    bottom: -150px;
+    right: -100px;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+}
